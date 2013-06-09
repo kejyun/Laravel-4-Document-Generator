@@ -21,15 +21,15 @@
 <h2>{{ Lang::get('l4doc.docs_title.preface.introduction.laravel_philosophy') }}</h2>
 
 <p>
-    Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+    Laravel 是網頁應用程式的框架，使用優雅的語意。我們認為開發必須是愉快的，這樣創意的體驗才能真正地被實現。Laravel 嘗試著除去開發專案時，常遇到的的痛苦，像身分驗證(authentication)、路由(routing)、session及快取(cache)。
 </p>
 
 <p>
-    Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+    Laravel的目標在於使開發者在沒有犧牲應用程式功能為前提，讓開發過程是愉悅的。快樂的開發者能夠做出最好的程式，為了這個目標，我們試圖去整合我們看過其他網頁框架中最佳的優點，包括其他語言開的網頁框架，像是 Ruby on Rails 、 ASP.NET MVC 及 Sinatra。
 </p>
 
 <p>
-    Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+    Laravel 是容易入門的，但卻是功能強大，提供健壯網頁應用程式強大的工具，一個極好的反轉控制容器(IoC)，語意表達式的 Migration 系統，支援緊密整合的單元測試，給你需要的工具去，建造你工作上的任何網頁應用程式。
 </p>
 
 <p><a name="learning-laravel"></a></p>
@@ -37,16 +37,16 @@
 <h2>{{ Lang::get('l4doc.docs_title.preface.introduction.learning_laravel') }}</h2>
 
 <p>
-    One of the best ways to learn Laravel is to read through the entirety of its documentation. This guide details all aspects of the framework and how to apply them to your application.
+    學習 Laravel 其中一個最佳的方法是閱讀整份說明文件，這份文件詳細說明 Laravel 框架各方面的功能，及如何將 Laravel 實作應用在你的網頁應用程式。
 </p>
 
 <p>
-    In addition to this guide, you may wish to check out some <a href="http://wiki.laravel.io/Books">Laravel books</a>. These community written books serve as a good supplemental resource for learning about the framework:
+    除了本份文件，您不妨可以看看一些 <a href="http://wiki.laravel.io/Books">Laravel相關書籍</a> ，這個社群撰寫的書籍，可以做為學習 Laravel 網頁程式框架的一個不錯的補充說明資訊。
 </p>
 
 <ul>
-    <li><a href="https://leanpub.com/codebright" target="_blank">Code Bright</a> by Dayle Rees</li>
-    <li><a href="https://leanpub.com/laravel-testing-decoded" target="_blank">Laravel Testing Decoded</a> by Jeffrey Way</li>
+    <li><a href="https://leanpub.com/codebright" target="_blank">Code Bright</a> 作者 Dayle Rees</li>
+    <li><a href="https://leanpub.com/laravel-testing-decoded" target="_blank">Laravel Testing Decoded</a> 作者 Jeffrey Way</li>
 </ul>
 
 <p><a name="development-team"></a></p>
@@ -54,21 +54,23 @@
 <h2>{{ Lang::get('l4doc.docs_title.preface.introduction.development_team') }}</h2>
 
 <p>
-    Laravel was created by <a href="https://github.com/taylorotwell">Taylor Otwell</a>, who continues to lead development of the framework. Other prominent community members and contributors include <a href="https://github.com/daylerees">Dayle Rees</a>, <a href="https://github.com/ShawnMcCool">Shawn McCool</a>, <a href="https://github.com/JeffreyWay">Jeffrey Way</a>, <a href="https://github.com/jasonlewis">Jason Lewis</a>, <a href="https://github.com/bencorlett">Ben Corlett</a>, <a href="https://github.com/franzliedke">Franz Liedke</a>, <a href="https://github.com/driesvints">Dries Vints</a>, <a href="https://github.com/crynobone">Mior Muhammed Zaki</a>, and <a href="https://github.com/philsturgeon">Phil Sturgeon</a>.
+    Laravel是由<a href="https://github.com/taylorotwell" target="_blank">Taylor Otwell</a>建立的，其他對 Laravel 有貢獻的傑出的社群成員包含 <a href="https://github.com/daylerees" target="_blank">Dayle Rees</a>, <a href="https://github.com/ShawnMcCool" target="_blank">Shawn McCool</a>、<a href="https://github.com/JeffreyWay" target="_blank">Jeffrey Way</a>、<a href="https://github.com/jasonlewis" target="_blank">Jason Lewis</a>、<a href="https://github.com/bencorlett" target="_blank">Ben Corlett</a>、<a href="https://github.com/franzliedke" target="_blank">Franz Liedke</a>、<a href="https://github.com/driesvints" target="_blank">Dries Vints</a>、<a href="https://github.com/crynobone" target="_blank">Mior Muhammed Zaki</a> 及 <a href="https://github.com/philsturgeon" target="_blank">Phil Sturgeon</a>
 </p>
 
 <p><a name="framework-sponsors"></a></p>
 
 <h2>{{ Lang::get('l4doc.docs_title.preface.introduction.framework_sponsors') }}</h2>
 
-<p>The following organizations have made financial contributions to the development of the Laravel framework:</p>
+<p>
+    以下的組織有對發展 Laravel 網頁框架，做資金上的的支援:
+</p>
 
 <ul>
-    <li><a href="http://userscape.com">UserScape</a></li>
-    <li><a href="http://cartalyst.com">Cartalyst</a></li>
-    <li><a href="http://ellidavis.com">Elli Davis - Toronto Realtor</a></li>
-    <li><a href="http://jaybanks.ca/vancouver-lofts-condos">Jay Banks - Vancouver Lofts &amp; Condos</a></li>
-    <li><a href="http://juliekinnear.com/toronoto-mls-listings">Julie Kinnear - Toronto MLS</a></li>
-    <li><a href="http://jamiesarner.com">Jamie Sarner - Toronto Real Estate</a></li>
+    <li><a href="http://userscape.com" target="_blank">UserScape</a></li>
+    <li><a href="http://cartalyst.com" target="_blank">Cartalyst</a></li>
+    <li><a href="http://ellidavis.com" target="_blank">Elli Davis - Toronto Realtor</a></li>
+    <li><a href="http://jaybanks.ca/vancouver-lofts-condos" target="_blank">Jay Banks - Vancouver Lofts &amp; Condos</a></li>
+    <li><a href="http://juliekinnear.com/toronoto-mls-listings" target="_blank">Julie Kinnear - Toronto MLS</a></li>
+    <li><a href="http://jamiesarner.com" target="_blank">Jamie Sarner - Toronto Real Estate</a></li>
 </ul>
 @stop;

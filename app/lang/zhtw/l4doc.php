@@ -1,4 +1,11 @@
 <?php 
+/**
+ * Laravel 4 文件產生器繁體中文語言檔
+ *     作者:KeJyun
+ *     建立日期:2013-06-09
+ *     最後修改日期:2013-06-09
+ *     聯絡方式:kejyun@gmail.com
+ */
 return array(
     'layout'=>array(
         'title'=> 'Laravel 4 PHP Framework繁體中文教學文件',
@@ -6,8 +13,9 @@ return array(
             'description'=>'Laravel, 優雅的PHP網頁工匠框架(Framework) 再開始享受開發上的樂趣吧'
         ),
         'header'=>array(
-            'welcome'=>'歡迎',
-            'documentation'=>'文件',
+            'welcome'=>'Welcome',
+            'documentation'=>'Documentation',
+            'documentation_trans_language'=>'中文文件',
             'api'=>'API',
             'github'=>'Github',
             'forums'=>'論壇',
@@ -68,10 +76,10 @@ return array(
         // 前言
         'preface'=>array(
             'introduction'=>array(
-                'laravel_philosophy'=>'Laravel哲學',
-                'learning_laravel'=>'學習Laravel',
+                'laravel_philosophy'=>'Laravel 哲學',
+                'learning_laravel'=>'學習 Laravel',
                 'development_team'=>'開發團隊',
-                'framework_sponsors'=>'框架贊助商',
+                'framework_sponsors'=>'贊助商',
             ),
             'quick'=>array(
                 'installation'=>'安裝',

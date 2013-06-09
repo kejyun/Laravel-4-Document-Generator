@@ -1,21 +1,21 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
+/**
+ * 作者:KeJyun
+ * 建立日期:2013-06-09
+ * 最後修改日期:2013-06-09
+ * 聯絡方式:kejyun@gmail.com
+ */
 // 首頁
 Route::get('/', array('as' => 'index', function()
 {
 	return 'index';
-	// return View::make('doc.zhtw.preface.introduction');
 }));
 // 文件
 Route::get('docs/{target}', array('as' => 'doc_index', 'uses'=>'DocController@Index'));
+Route::get('docs', function ()
+{
+	return View::make('doc.zhtw.index');
+});
+// 文件產生器
+Route::get('docsgen', array('as' => 'docgen_index', 'uses'=>'DocgenController@Index'));
 

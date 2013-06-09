@@ -26,25 +26,27 @@
 
 <h2>{{ Lang::get('l4doc.docs_title.preface.quick.installation') }}</h2>
 
-<p>To install the Laravel framework, you may issue the following command from your terminal:</p>
+<p>
+    你可以在命列列輸入以下指令安裝 Laravel:
+</p>
 
 <pre>
     <code>composer create-project laravel/laravel</code>
 </pre>
 
 <p>
-    Or, you may also download a copy of the <a href="https://github.com/laravel/laravel/archive/master.zip">repository from Github</a>. Next, after <a href="http://getcomposer.org">installing Composer</a>, run the <code>composer install</code> command in the root of your project directory. This command will download and install the framework's dependencies.
+    或者，你也可以從 <a href="https://github.com/laravel/laravel/archive/master.zip" target="_blank">Github Repository</a> 下載，下一步則是 <a href="http://getcomposer.org" target="_blank">安裝Composer</a> ，安裝完Composer後接下來在專案的根目錄執行 <code>composer install</code> 指令進行安裝，這個指令將會下載安裝 Laravel 所需要的套件
 </p>
 
 <p>
-    After installing the framework, take a glance around the project to familiarize yourself with the directory structure. The <code>app</code> directory contains folders such as <code>views</code>, <code>controllers</code>, and <code>models</code>. Most of your application's code will reside somewhere in this directory. You may also wish to explore the <code>app/config</code> directory and the configuration options that are available to you.
+    在安裝完 Laravel 之後，可以看一下專案目錄去熟悉目錄架構，<code>app</code> 目錄包含的資料夾有<code>views(視圖)</code> 、 <code>controllers(控制器)</code> 及 <code>models(模型)</code>，您大多數的程式碼都在 <code>app</code> 的資料夾中進行撰寫。您也可以到 <code>app/config</code> 目錄看看，這裡提供您應用程式可以設定的選項。
 </p>
 
 <p><a name="routing"></a></p>
 <h2>{{ Lang::get('l4doc.docs_title.preface.quick.routing') }}</h2>
 
 <p>
-    To get started, let's create our first route. In Laravel, the simplest route is a route to a Closure. Pop open the <code>app/routes.php</code> file and add the following route to the bottom of the file:
+    為了要開始我們的應用程式，讓我們建立我們第一個路由(route)，在 Laravel 中最簡單的路由是封閉性的路由，打開 <code>app/routes.php</code> 檔案並在檔案下方加入下列路由規則:
 </p>
 
 <pre><code>Route::get('users', function()
@@ -53,17 +55,17 @@
 });</code></pre>
 
 <p>
-    Now, if you hit the <code>/users</code> route in your web browser, you should see <code>Users!</code> displayed as the response. Great! You've just created your first route.
+    現在如果你在瀏覽器網址列輸入 <code>/users</code> 的路由，你將會看到網頁輸出 <code>Users!</code> 的字串，太棒了!，你剛剛建立了你的第一個路由~
 </p>
 
 <p>
-    Routes can also be attached to controller classes. For example:
+    路由也可以附屬於控制器(Controller)類別，例如:
 </p>
 
 <pre><code>Route::get('users', 'UserController@getIndex');</code></pre>
 
 <p>
-    This route informs the framework that requests to the <code>/users</code> route should call the <code>getIndex</code> method on the <code>UserController</code> class. For more information on controller routing, check out the <a href="/docs/controllers">controller documentation</a>.
+    這個路由告知了 Laravel ，任何對於網站的 <code>/users</code> 請求，將會導到 <code>UserController</code> 控制器類別中的 <code>getIndex</code>方法，有關於更多的控制器路由資訊，可以參考 <a href="../../docs/controllers"> {{ Lang::get('l4doc.layout.docs_menu.controllers') }}</a> 說明文件
 </p>
 
 <p><a name="creating-a-view"></a></p>
@@ -71,7 +73,7 @@
 <h2>{{ Lang::get('l4doc.docs_title.preface.quick.creating_a_view') }}</h2>
 
 <p>
-    Next, we'll create a simple view to display our user data. Views live in the <code>app/views</code> directory and contain the HTML of your application. We're going to place two new views in this directory: <code>docs_title.blade.php</code> and <code>users.blade.php</code>. First, let's create our <code>docs_title.blade.php</code> file:
+    下一步我們將建立一個簡單的view(視圖)去呈現我們使用者的資料，view檔案是放在 <code>app/views</code> 目錄，包含網頁應用程式的 HTML 程式碼，我們要在這個目錄建立 <code>docs_title.blade.php</code> 及 <code>users.blade.php</code> 這兩個 view 的檔案，首先我們先建立 <code>docs_title.blade.php</code> 的檔案內容:
 </p>
 
 <pre><code>&lt;html&gt;
@@ -82,7 +84,9 @@
     &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-<p>Next, we'll create our <code>users.blade.php</code> view:</p>
+<p>
+    下一步我們建立 <code>users.blade.php</code> 的檔案內容:
+</p>
 
 <pre><code>(@)extends('docs_title')
 
@@ -92,10 +96,12 @@
 </code></pre>
 
 <p>
-    Some of this syntax probably looks quite strange to you. That's because we're using Laravel's templating system: Blade. Blade is very fast, because it is simply a handful of regular expressions that are run against your templates to compile them to pure PHP. Blade provides powerful functionality like template inheritance, as well as some syntax sugar on typical PHP control structures such as <code>if</code> and <code>for</code>. Check out the <a href="/docs/templates">Blade documentation</a> for more details.
+    有一些語法或對你來說會有點陌生，這是因為我們正在使用 Laravel 的樣板系統 : <code>Blade</code> 。 Blade 執行速度非常快，因為它是一個少數簡單的正規表示式，使用單純的PHP對樣板進行編譯，Blade 提供強大的功能，像樣板繼承(inheritance)，以及一些典型的 PHP 控制結構，像 <code>if</code> 及 <code>for</code>，其他詳情可以參考 <a href="../../docs/templates"> {{ Lang::get('l4doc.layout.docs_menu.templates') }}</a> 說明文件
 </p>
 
-<p>Now that we have our views, let's return it from our <code>/users</code> route. Instead of returning <code>Users!</code> from the route, return the view instead:</p>
+<p>
+    現在我們有我們的view了，讓我們回到我們 <code>/users</code> 的路由下，將原本回傳路由下回傳 <code>Users!</code> 變更為回傳 view 的內容:
+</p>
 
 <pre><code>Route::get('users', function()
 {
@@ -103,32 +109,38 @@
 });
 </code></pre>
 
-<p>Wonderful! Now you have setup a simple view that extends a docs_title. Next, let's start working on our database layer.</p>
+<p>
+    太棒了，現在你已經設定了一個簡單的view，並引用了 docs_title 的 view ，讓我們開始處理資料庫層吧。
+</p>
 
 <p><a name="creating-a-migration"></a></p>
 
 <h2>{{ Lang::get('l4doc.docs_title.preface.quick.creating_a_migration') }}</h2>
 
 <p>
-    To create a table to hold our data, we'll use the Laravel migration system. Migrations let you expressively define modifications to your database, and easily share them with the rest of your team.
+    為了建立一個資料表去保存我們的資料，我們將使用 Laravel 的 Migration 系統，Migration 讓你能夠透過語意表達，去定義修改你的資料庫，而且可以將這些對資料庫的修改異動，輕易的與團隊中的其他人共享。
 </p>
 
 <p>
-    First, let's configure a database connection. You may configure all of your database connections from the <code>app/config/database.php</code> file. By default, Laravel is configured to use SQLite, and an SQLite database is included in the <code>app/database</code> directory. If you wish, you may change the <code>driver</code> option to <code>mysql</code> and configure the <code>mysql</code> connection credentials within the database configuration file.
+    首先讓我們來設定資料庫連線吧，你可以在 <code>app/config/database.php</code> 的檔案中設定所有的資料庫連線。 Laravel是使用 SQlite 當作預設使用的資料庫，並保存資料於 <code>app/database</code> 資料夾。 你也可以變更要預設使用的 <code>資料庫類型</code> 為 <code>mysql</code> ，並在資料庫設定檔案中設定 <code>mysql</code> 連線的相關驗證資訊。
 </p>
 
 <p>
-    Next, to create the migration, we'll use the <a href="/docs/artisan">Artisan CLI</a>. From the root of your project, run the following from your terminal:
+    接下來我們使用 <a href="../../docs/artisan">{{ Lang::get('l4doc.layout.docs_menu.artisan') }}</a>去建立我們的 Migration，在我們專案的根目錄執行下列指令:
 </p>
 
 <pre><code>php artisan migrate:make create_users_table
 </code></pre>
 
 <p>
-    Next, find the generated migration file in the <code>app/database/migrations</code> folder. This file contains a class with two methods: <code>up</code> and <code>down</code>. In the <code>up</code> method, you should make the desired changes to your database tables, and in the <code>down</code> method you simply reverse them.
+    接下來，找到應用程序/數據庫/遷移文件夾中生成的遷移文件。此文件包含一個類有兩個方法：向上和向下。在方法，你應該作出所需的更改數據庫表，在向下的方法，你根本扭轉。 
+
+    接下來到 <code>app/database/migrations</code> 目錄找到我們產生的 Migration 檔案，這個檔案會包含兩個方法:<code>up</code> 及 <code>down</code> ，在 <code>up</code> 方法中建立你想要對資料表做的異動，在 <code>down</code> 方法中則是做與 <code>up</code> 方法反向的資料表異動。
 </p>
 
-<p>Let's define a migration that looks like this:</p>
+<p>
+    讓我們來定義 Migration 檔案，看起來會像下列這樣:
+</p>
 
 <pre><code>public function up()
 {
@@ -148,14 +160,14 @@ public function down()
 </code></pre>
 
 <p>
-    Next, we can run our migrations from our terminal using the <code>migrate</code> command. Simply execute this command from the root of your project:
+    接下來，我們可以從命令列執行我們的 Migration ，只需要在專案的根目錄執行下列 <code>migrate</code> 指令即可
 </p>
 
 <pre><code>php artisan migrate
 </code></pre>
 
 <p>
-    If you wish to rollback a migration, you may issue the <code>migrate:rollback</code> command. Now that we have a database table, let's start pulling some data!
+    如果你想要復原執行過的 Migration ，可以在命令列輸入 <code>migrate:rollback</code> 指令即可，而現在我們有一個資料表了，讓我們從資料表中來抓取一些資料吧!
 </p>
 
 <p><a name="eloquent-orm"></a></p>
@@ -163,21 +175,27 @@ public function down()
 <h2>{{ Lang::get('l4doc.docs_title.preface.quick.eloquent_orm') }}</h2>
 
 <p>
-    Laravel ships with a superb ORM: Eloquent. If you have used the Ruby on Rails framework, you will find Eloquent familiar, as it follows the ActiveRecord ORM style of database interaction.
+    Laravel 擁有一個優秀的 ORM : Eloquent ，如果你使用過 Ruby on Rails 的框架，你會發現 Eloquent 有很熟悉的感覺，因為他遵循著 ActiveRecord ORM 風格的資料庫互動。
 </p>
 
 <p>
-    First, let's define a model. An Eloquent model can be used to query an associated database table, as well as represent a given row within that table. Don't worry, it will all make sense soon! Models are typically stored in the <code>app/models</code> directory. Let's define a <code>User.php</code> model in that directory like so:
+    首先讓我們定義一個 Model(模型)，一個 Eloquent 可以被用來使用資料庫的關聯查詢，就像在給予的列(row)資料中，表示在資料表中的資料，別擔心，你會很快地了解它的! Model 通常是存放在 <code>app/models</code> 目錄，讓我們在 Model 資料夾中定義一個 <code>User.php</code> 的 Model ，像這樣:
 </p>
 
 <pre><code>class User extends Eloquent {}
 </code></pre>
 
-<p>Note that we do not have to tell Eloquent which table to use. Eloquent has a variety of conventions, one of which is to use the plural form of the model name as the model's database table. Convenient!</p>
+<p>
+    請注意，我們沒有告訴 Eloquent 要使用哪一個資料表， Eloquent 有很多種預設的規則，其中一個規則是使用 Model 名稱複數名稱 (User => Users) 當作是資料表的名稱，相當的方便!
+</p>
 
-<p>Using your preferred database administration tool, insert a few rows into your <code>users</code> table, and we'll use Eloquent to retrieve them and pass them to our view.</p>
+<p>
+    使用你偏好的資料庫管理工作，在你的 <code>users</code> 資料表新增幾筆資料，我們將使用 Eloquent 去取得這些資料，並將資料傳給我們的 view。
+</p>
 
-<p>Now let's modify our <code>/users</code> route to look like this:</p>
+<p>
+    現在我們去修改 <code>/users</code> 的路由規則，改成像這樣子:
+</p>
 
 <pre><code>Route::get('users', function()
 {
@@ -188,16 +206,20 @@ public function down()
 </code></pre>
 
 <p>
-    Let's walk through this route. First, the <code>all</code> method on the <code>User</code> model will retrieve all of the rows in the <code>users</code> table. Next, we're passing these records to the view via the <code>with</code> method. The <code>with</code> method accepts a key and a value, and is used to make a piece of data available to a view.
+    讓我們來循序走過在這個路由的過程，首先 在 <code>User</code> Model 中的 <code>all</code> 方法，會取得所有在 <code>users</code> 資料表的所有資料，下一步我們透過 <code>with</code> 方法傳遞這些資料給我們的 view， <code>with</code> 的方法接受一個 key 及 value 的資料，讓資料可以在 view 中被存取使用。
 </p>
 
-<p>Awesome. Now we're ready to display the users in our view!</p>
+<p>
+    太棒了，現在我們準備在 view 中顯示使用者的資料了!
+</p>
 
 <p><a name="displaying-data"></a></p>
 
 <h2>{{ Lang::get('l4doc.docs_title.preface.quick.displaying_data') }}</h2>
 
-<p>Now that we have made the <code>users</code> available to our view. We can display them like so:</p>
+<p>
+    我們讓 view 可以透過 <code>users</code> 存取我們使用者的資料，所以我們可以像這樣去顯示使用者的資料:
+</p>
 
 <pre><code>(@)extends('docs_title')
 
@@ -209,10 +231,10 @@ public function down()
 </code></pre>
 
 <p>
-    You may be wondering where to find our <code>echo</code> statements. When using Blade, you may echo data by surrounding it with double curly braces. It's a cinch. Now, you should be able to hit the <code>/users</code> route and see the names of your users displayed in the response.
+    你可能會好奇在哪裡去找到我們的 <code>echo</code> 陳述式，當我們使用 Blade，你可以透過兩個大括號({)({)(})(})去列印資料，這相當的容易，現在你可以到 <code>/users</code> 路由下去看看你的資料表的使用者姓名了。
 </p>
 
 <p>
-    This is just the beginning. In this tutorial, you've seen the very basics of Laravel, but there are so many more exciting things to learn. Keep reading through the documentation and dig deeper into the powerful features available to you in <a href="/docs/eloquent">Eloquent</a> and <a href="/docs/templates">Blade</a>. Or, maybe you're more interested in <a href="/docs/queues">Queues</a> and <a href="/docs/testing">Unit Testing</a>. Then again, maybe you want to flex your architecture muscles with the <a href="/docs/ioc">IoC Container</a>. The choice is yours!
+    這僅僅是剛開始而已，在本次教學中，你已經看到基本的 Laravel 的框架了，但是還有更多令人興奮的東西等著我們去學，可以去閱讀 <a href="../../docs/eloquent">{{ Lang::get('l4doc.layout.docs_menu.eloquent') }}</a> 及 <a href="../../docs/templates">{{ Lang::get('l4doc.layout.docs_menu.templates') }}</a> 教學文件去挖掘更深入更強大的功能。或許你會好奇 <a href="../../docs/queues">{{ Lang::get('l4doc.layout.docs_menu.queues') }}</a> 及 <a href="../../docs/testing">{{ Lang::get('l4doc.layout.docs_menu.testing') }}</a>，話又說回來，或許你想要使用 <a href="../../docs/ioc">{{ Lang::get('l4doc.layout.docs_menu.ioc') }}</a> 展示可擴充性的架構，都是可以讓你選擇的!
 </p>
 @stop;
