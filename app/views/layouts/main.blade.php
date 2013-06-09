@@ -86,7 +86,7 @@
             </li>
 
             <li>
-                {{ Lang::get('l4doc.layout.docs_menu.getting_started') }}
+                {{ Lang::get('l4doc.layout.docs_menu.learning_more') }}
                 <ul>
                 <li><a href="/docs/cache">{{ Lang::get('l4doc.layout.docs_menu.cache') }}</a></li>
                 <li><a href="/docs/events">{{ Lang::get('l4doc.layout.docs_menu.events') }}</a></li>

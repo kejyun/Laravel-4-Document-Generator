@@ -10,12 +10,12 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
+// 首頁
 Route::get('/', array('as' => 'index', function()
 {
-	// $config = Config::get('l4setting');
-	return View::make('doc.introduction')->with('config',$config);
+	return 'index';
+	// return View::make('doc.zhtw.preface.introduction');
 }));
+// 文件
+Route::get('docs/{target}', array('as' => 'doc_index', 'uses'=>'DocController@Index'));
 
-Route::get('doc/introduction', array('as' => 'doc_introduction', 'uses'=>'DocController@Introduction'));
-Route::resource('doc', 'DocController');
