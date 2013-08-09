@@ -39,10 +39,10 @@
 <h2>{{ Lang::get('l4doc.docs_title.getting_started.routing.basic_routing') }}</h2>
 
 <p>
-    Most of the routes for your application will be defined in the <code>app/routes.php</code> file. The simplest Laravel routes consist of a URI and a Closure callback.
+    你的 Laravel 應用程式的路由將會被定義在 <code>app/routes.php</code>  的檔案中，最簡單的 Laravel 路由為一個 URI 及一個封閉呼叫的函式 (Closure callback)
 </p>
 
-<p><strong>Basic GET Route</strong></p>
+<p><strong>基本 GET 路由</strong></p>
 
 <pre><code>Route::get('/', function()
 {
@@ -50,7 +50,7 @@
 });
 </code></pre>
 
-<p><strong>Basic POST Route</strong></p>
+<p><strong>基本 POST 路由</strong></p>
 
 <pre><code>Route::post('foo/bar', function()
 {
@@ -58,7 +58,7 @@
 });
 </code></pre>
 
-<p><strong>Registering A Route Responding To Any HTTP Verb</strong></p>
+<p><strong>註冊一個處理任何 HTTP 請求的路由 (GET、POST、PUT及DELETE) </strong></p>
 
 <pre><code>Route::any('foo', function()
 {
@@ -66,7 +66,7 @@
 });
 </code></pre>
 
-<p><strong>Forcing A Route To Be Served Over HTTPS</strong></p>
+<p><strong>強制路由要經過 HTTPS的加密連線</strong></p>
 
 <pre><code>Route::get('foo', array('https', function()
 {
@@ -74,7 +74,9 @@
 }));
 </code></pre>
 
-<p>Often, you will need to generate URLs to your routes, you may do so using the <code>URL::to</code> method:</p>
+<p>
+    通常你可以使用 <code>URL::to</code> 的方法，產生一個網址指向你定義的路由
+</p>
 
 <pre><code>$url = URL::to('foo');
 </code></pre>
@@ -89,7 +91,7 @@
 });
 </code></pre>
 
-<p><strong>Optional Route Parameters</strong></p>
+<p><strong>可選擇的路由參數名稱</strong></p>
 
 <pre><code>Route::get('user/{name?}', function($name = null)
 {
@@ -97,7 +99,7 @@
 });
 </code></pre>
 
-<p><strong>Optional Route Parameters With Defaults</strong></p>
+<p><strong>有預設值的路由參數名稱</strong></p>
 
 <pre><code>Route::get('user/{name?}', function($name = 'John')
 {
@@ -105,7 +107,7 @@
 });
 </code></pre>
 
-<p><strong>Regular Expression Route Constraints</strong></p>
+<p><strong>使用正規表示式限制路由名稱</strong></p>
 
 <pre><code>Route::get('user/{name}', function($name)
 {
@@ -125,10 +127,10 @@ Route::get('user/{id}', function($id)
 <h2>{{ Lang::get('l4doc.docs_title.getting_started.routing.route_filters') }}</h2>
 
 <p>
-    Route filters provide a convenient way of limiting access to a given route, which is useful for creating areas of your site which require authentication. There are several filters included in the Laravel framework, including an <code>auth</code> filter, an <code>auth.basic</code> filter, a <code>guest</code> filter, and a <code>csrf</code>filter. These are located in the <code>app/filters.php</code> file.
+    路由過濾器 (Route filters) 提供一個方便限制路由存取的方法，在限制某些路由需要通過驗證時，是一個很好用的辦法，在 Laravel 中有包含幾個過濾器，有 <code>auth</code> 、 <code>auth.basic</code> 、 <code>guest</code> 跟 <code>csrf</code> 4 個過濾器，這些過濾器是實作在 <code>app/filters.php</code> 的檔案內。
 </p>
 
-<p><strong>Defining A Route Filter</strong></p>
+<p><strong>定義一個路由過濾器</strong></p>
 
 <pre><code>Route::filter('old', function()
 {
@@ -140,10 +142,10 @@ Route::get('user/{id}', function($id)
 </code></pre>
 
 <p>
-    If a response is returned from a filter, that response will be considered the response to the request and the route will not be executed, and any <code>after</code> filters on the route will also be cancelled.
+    如果已經從過濾器回傳了回應，這個回應會視為這個請求的回應，那麼路由之後的動作將不會被執行，且任何的在路由上的 <code>after</code> 過濾器也不會被執行
 </p>
 
-<p><strong>Attaching A Filter To A Route</strong></p>
+<p><strong>在路由上加載一個過濾器</strong></p>
 
 <pre><code>Route::get('user', array('before' =&gt; 'old', function()
 {
@@ -151,7 +153,7 @@ Route::get('user/{id}', function($id)
 }));
 </code></pre>
 
-<p><strong>Attaching Multiple Filters To A Route</strong></p>
+<p><strong>在路由上加載數個過濾器</strong></p>
 
 <pre><code>Route::get('user', array('before' =&gt; 'auth|old', function()
 {
@@ -159,7 +161,7 @@ Route::get('user/{id}', function($id)
 }));
 </code></pre>
 
-<p><strong>Specifying Filter Parameters</strong></p>
+<p><strong>指定過濾器的參數</strong></p>
 
 <pre><code>Route::filter('age', function($route, $request, $value)
 {
@@ -172,7 +174,7 @@ Route::get('user', array('before' =&gt; 'age:200', function()
 }));
 </code></pre>
 
-<p>After filters receive a <code>$response</code> as the third argument passed to the filter:</p>
+<p>在過濾器收到回應時，指定第三個參數 <code>$response</code> 傳遞給過濾器:</p>
 
 <pre><code>Route::filter('log', function($route, $request, $response, $value)
 {
@@ -180,9 +182,11 @@ Route::get('user', array('before' =&gt; 'age:200', function()
 });
 </code></pre>
 
-<p><strong>Pattern Based Filters</strong></p>
+<p><strong>以模式為基礎的過濾器</strong></p>
 
-<p>You may also specify that a filter applies to an entire set of routes based on their URI.</p>
+<p>
+    你也可以指定過濾器給整個集合的 URI 路由
+</p>
 
 <pre><code>Route::filter('admin', function()
 {
@@ -193,21 +197,23 @@ Route::when('admin/*', 'admin');
 </code></pre>
 
 <p>
-    In the example above, the <code>admin</code> filter would be applied to all routes beginning with <code>admin/</code>. The asterisk is used as a wildcard, and will match any combination of characters.
+    在以上的範例，<code>admin</code> 過濾器將會在路由開頭名稱為 <code>admin/</code> 時去執行， <code>*</code> 是使用萬用字元，將會比對到所有的字元組合。
 </p>
 
-<p>You may also constrain pattern filters by HTTP verbs:</p>
+<p>
+    你也可以限制模式過濾器在指定的 HTTP 請求中執行:
+</p>
 
 <pre><code>Route::when('admin/*', 'admin', array('post'));
 </code></pre>
 
-<p><strong>Filter Classes</strong></p>
+<p><strong>過濾類別</strong></p>
 
 <p>
-    For advanced filtering, you may wish to use a class instead of a Closure. Since filter classes are resolved out of the application <a href="/docs/ioc">IoC Container</a>, you will be able to utilize dependency injection in these filters for greater testability.
+    對於進階的過濾方法，你或許想要一個類別去取代過濾的方法，而不是使用封閉函式的方式，由於過濾器的類別在 <a href="../../docs/ioc">{{ Lang::get('l4doc.layout.docs_menu.ioc') }}</a> 中被解決了，你可以在這些過濾器使用相依注入的方式，獲得更大的可測性。
 </p>
 
-<p><strong>Defining A Filter Class</strong></p>
+<p><strong>定義一個過濾類別</strong></p>
 
 <pre><code>class FooFilter {
 
@@ -219,7 +225,7 @@ Route::when('admin/*', 'admin');
 }
 </code></pre>
 
-<p><strong>Registering A Class Based Filter</strong></p>
+<p><strong>註冊一個類別為基礎的過濾器</strong></p>
 
 <pre><code>Route::filter('foo', 'FooFilter');
 </code></pre>
@@ -229,7 +235,7 @@ Route::when('admin/*', 'admin');
 <h2>{{ Lang::get('l4doc.docs_title.getting_started.routing.named_routes') }}</h2>
 
 <p>
-    Named routes make referring to routes when generating redirects or URLs more convenient. You may specify a name for a route like so:
+    路由命名讓我們在產生"重新導向"或"網址"時，能夠更容易地去指向這個路由，你可以像這樣指定一個路由名稱:
 </p>
 
 <pre><code>Route::get('user/profile', array('as' =&gt; 'profile', function()
@@ -238,19 +244,25 @@ Route::when('admin/*', 'admin');
 }));
 </code></pre>
 
-<p>You may also specify route names for controller actions:</p>
+<p>
+    你也可以指定一個路由名稱到控制器的任一個方法動作:
+</p>
 
 <pre><code>Route::get('user/profile', array('as' =&gt; 'profile', 'uses' =&gt; 'UserController@showProfile'));
 </code></pre>
 
-<p>Now, you may use the route's name when generating URLs or redirects:</p>
+<p>
+    現在你可以在產生"重新導向"或"網址"時，使用路由的名稱了:
+</p>
 
 <pre><code>$url = URL::route('profile');
 
 $redirect = Redirect::route('profile');
 </code></pre>
 
-<p>You may access the name of a route that is running via the <code>currentRouteName</code> method:</p>
+<p>
+    你可以透過執行 <code>currentRouteName</code> 的方法，去取得現在的路由名稱:
+</p>
 
 <pre><code>$name = Route::currentRouteName();
 </code></pre>
@@ -260,7 +272,7 @@ $redirect = Redirect::route('profile');
 <h2>{{ Lang::get('l4doc.docs_title.getting_started.routing.route_groups') }}</h2>
 
 <p>
-    Sometimes you may need to apply filters to a group of routes. Instead of specifying the filter on each route, you may use a route group:
+    有時候你或許需要將過濾器應用到一個路由群組中，除了明確地指明每一個要過濾的路由名稱的方法外，你也可以使用路由群組的方式去指定這個過濾器要過濾的路由:
 </p>
 
 <pre><code>Route::group(array('before' =&gt; 'auth'), function()
@@ -281,7 +293,9 @@ $redirect = Redirect::route('profile');
 
 <h2>{{ Lang::get('l4doc.docs_title.getting_started.routing.sub_domain_routing') }}</h2>
 
-<p>Laravel routes are also able to handle wildcard sub-domains, and pass you wildcard parameters from the domain:</p>
+<p>
+    Laravel的路由也可以去處理萬用字元的子網域，傳送一個萬用字元的參數到這個網域下:
+</p>
 
 <p><strong>Registering Sub-Domain Routes</strong></p>
 
@@ -300,7 +314,9 @@ $redirect = Redirect::route('profile');
 
 <h2>{{ Lang::get('l4doc.docs_title.getting_started.routing.route_prefixing') }}</h2>
 
-<p>A group of routes may be prefixed by using the <code>prefix</code> option in the attributes array of a group:</p>
+<p>
+    一個群組的路由可以使用 <code>prefix</code> 選項當作這個路由的前綴詞:
+</p>
 
 <p><strong>Prefixing Grouped Routes</strong></p>
 
@@ -320,15 +336,17 @@ $redirect = Redirect::route('profile');
 <h2>{{ Lang::get('l4doc.docs_title.getting_started.routing.route_model_binding') }}</h2>
 
 <p>
-    Model binding provides a convenient way to inject model instances into your routes. For example, instead of injecting a user's ID, you can inject the entire User model instance that matches the given ID. First, use the <code>Route::model</code> method to specify the model that should be used for a given parameter:
+    模型 (Model) 可以方便的綁定在你的路由上，舉例來說，除了綁定使用者的編號到路由上，你也可以將整個使用者模型綁訂到路由上，去取得符合使用者編號資料的模型路由，首先使用 <code>Route::model</code> 的方法去指定用於整個模型的參數:
 </p>
 
-<p><strong>Binding A Parameter To A Model</strong></p>
+<p><strong>綁定參數到模型 (Model) 上</strong></p>
 
 <pre><code>Route::model('user', 'User');
 </code></pre>
 
-<p>Next, define a route that contains a <code>{user}</code> parameter:</p>
+<p>
+    下一個，定義一個包含 <code>{user}</code> 參數的路由:
+</p>
 
 <pre><code>Route::get('profile/{user}', function(User $user)
 {
@@ -337,15 +355,15 @@ $redirect = Redirect::route('profile');
 </code></pre>
 
 <p>
-    Since we have bound the <code>{user}</code> parameter to the <code>User</code> model, a <code>User</code> instance will be injected into the route. So, for example, a request to <code>profile/1</code> will inject the <code>User</code> instance which has an ID of 1.
+    既然我們已經將 <code>{user}</code> 參數綁定到 <code>User</code> 模型上，這個 <code>User</code> 模型的實例將會被實做到這個路由上，因此舉例來說，如果有一個 <code>profile/1</code> 的請求到這個路由，則會將會轉為在 <code>User</code> 模型中編號為1的使用者。
 </p>
 
 <blockquote>
-  <p><strong>Note:</strong> If a matching model instance is not found in the database, a 404 error will be thrown.</p>
+  <p><strong>備註:</strong> 如果比對到了模型的實例，但是在資料庫沒有找到這筆資料，則將會丟出 404 錯誤的訊息給使用者</p>
 </blockquote>
 
 <p>
-    If you wish to specify your own "not found" behavior, you may pass a Closure as the third argument to the <code>model</code> method:
+    如果你想要指定"未找到""的行為，你可以在第三個參數傳遞一個封閉的函式參數到這個 <code>模型 (Model) </code> 方法中:
 </p>
 
 <pre><code>Route::model('user', 'User', function()
@@ -354,7 +372,9 @@ $redirect = Redirect::route('profile');
 });
 </code></pre>
 
-<p>Sometimes you may wish to use your own resolver for route parameters. Simply use the <code>Route::bind</code> method:</p>
+<p>
+    有時你可能會想要使用你自己的路由參數取解析路由，只要簡單的使用 <code>Route::bind</code> 方法即可:
+</p>
 
 <pre><code>Route::bind('user', function($value, $route)
 {
@@ -367,18 +387,18 @@ $redirect = Redirect::route('profile');
 <h2>{{ Lang::get('l4doc.docs_title.getting_started.routing.throwing_404_errors') }}</h2>
 
 <p>
-    There are two ways to manually trigger a 404 error from a route. First, you may use the <code>App::abort</code> method:
+    有兩種方法可以手動的去觸發路由上的 404 錯誤訊息，首先你可以使用 <code>App::abort</code> 的方法去觸發:
 </p>
 
 <pre><code>App::abort(404);
 </code></pre>
 
 <p>
-    Second, you may throw an instance of <code>Symfony\Component\HttpKernel\Exception\NotFoundHttpException</code>.
+    第二種，你可以丟出一個 <code>Symfony\Component\HttpKernel\Exception\NotFoundHttpException</code> 的例外實例
 </p>
 
 <p>
-    More information on handling 404 exceptions and using custom responses for these errors may be found in the <a href="/docs/errors#handling-404-errors">errors</a> section of the documentation.
+    更多處理 404 例外，並使用自訂的錯誤回應給使用者的辦法可以在 <a href="../../docs/errors#handling-404-errors">{{ Lang::get('l4doc.layout.docs_menu.errors') }}</a> 章節中，找到相關的說明文件。
 </p>
 
 <p><a name="routing-to-controllers"></a></p>
@@ -386,10 +406,10 @@ $redirect = Redirect::route('profile');
 <h2>{{ Lang::get('l4doc.docs_title.getting_started.routing.routing_to_controllers') }}</h2>
 
 <p>
-    Laravel allows you to not only route to Closures, but also to controller classes, and even allows the creation of <a href="/docs/controllers#resource-controllers">resource controllers</a>.
+    Laravel 不只允許你使用封閉的函式，也可以使用控制器類別，更允許你建立一個 <a href="../../docs/controllers">Resource {{ Lang::get('l4doc.layout.docs_menu.controllers') }}</a>
 </p>
 
 <p>
-    See the documentation on <a href="/docs/controllers">Controllers</a> for more details.
+    更多詳細的說明文件可以在 <a href="../../docs/controllers">{{ Lang::get('l4doc.layout.docs_menu.controllers') }}</a> 中找到。
 </p>
 @stop;

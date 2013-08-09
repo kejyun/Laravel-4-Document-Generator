@@ -14,7 +14,7 @@ Route::get('/', array('as' => 'index', function()
 Route::get('docs/{target}', array('as' => 'doc_index', 'uses'=>'DocController@Index'));
 Route::get('docs', function ()
 {
-	return View::make('doc.zhtw.index');
+	return View::make('doc.zhtw.docindex');
 });
 // 文件產生器
 Route::get('docsgen', array('as' => 'docgen_index', 'uses'=>'DocgenController@Index'));

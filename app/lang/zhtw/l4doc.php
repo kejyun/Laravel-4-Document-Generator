@@ -8,9 +8,10 @@
  */
 return array(
     'layout'=>array(
-        'title'=> 'Laravel 4 PHP Framework繁體中文教學文件',
+        'title'=> 'Laravel 4 PHP Framework Documentation 繁體中文教學文件',
         'meta'=>array(
-            'description'=>'Laravel, 優雅的PHP網頁工匠框架(Framework) 再開始享受開發上的樂趣吧'
+            'description'=>'Laravel, 優雅的PHP網頁工匠框架(Framework) 開始享受開發上的樂趣吧!',
+            'keyword'=>'Laravel,Documentation,教學,文件,繁體,中文,PHP,Framework,框架,優雅',
         ),
         'header'=>array(
             'welcome'=>'Welcome',
@@ -47,6 +48,7 @@ return array(
             'events'=>'事件',
             'facades'=>'Facades',
             'html'=>'表單及HTML',
+            'helpers'=>'Helpers 函式',
             'ioc'=>'IoC容器',
             'localization'=>'在地化',
             'mail'=>'郵件',
@@ -177,7 +179,7 @@ return array(
                 'mocking_facades'=>'模擬Facades',
             ),
             'html'=>array(
-                'opening_a_form'=>'開啟一個表單',
+                'opening_a_form'=>'開啟表單',
                 'csrf_protection'=>'CSRF保護',
                 'form_model_binding'=>'標單模組綁定',
                 'labels'=>'Labels',
@@ -187,6 +189,13 @@ return array(
                 'drop_down_lists'=>'下拉式選單',
                 'buttons'=>'按鈕',
                 'custom_macros'=>'自訂巨集',
+            ),
+            'helpers'=>array(
+                'arrays'=>'陣列',
+                'paths'=>'路徑',
+                'strings'=>'字串',
+                'urls'=>'網址',
+                'miscellaneous'=>'其他雜項',
             ),
             'ioc'=>array(
                 'introduction'=>'介紹',
@@ -298,7 +307,7 @@ return array(
                 'basic_usage'=>'基本使用',
                 'mass_assignment'=>'大量指定',
                 'insert_update_delete'=>'新增、更新及刪除',
-                'soft_deleting'=>'軟刪除',
+                'soft_deleting'=>'微刪除',
                 'timestamps'=>'時間戳記',
                 'query_scopes'=>'查詢範圍',
                 'relationships'=>'關聯',

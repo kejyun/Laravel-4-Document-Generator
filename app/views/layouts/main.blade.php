@@ -12,8 +12,11 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>{{ Lang::get('l4doc.layout.title') }}</title>
+<title>{{ Lang::get('l4doc.layout.title') }}{{ $doc_title }}</title>
+<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
 <meta name="description" content="{{ Lang::get('l4doc.layout.meta.description') }}">
+<meta name="keyword" content="{{ Lang::get('l4doc.layout.meta.keyword') }}" />
+
 <link media="all" type="text/css" rel="stylesheet" href="../../css/style.css">
 <script src="../../js/modernizr-2.6.2.min.js"></script>
 
@@ -101,6 +104,7 @@
                 <li><a href="../../docs/events">{{ Lang::get('l4doc.layout.docs_menu.events') }}</a></li>
                 <li><a href="../../docs/facades">{{ Lang::get('l4doc.layout.docs_menu.facades') }}</a></li>
                 <li><a href="../../docs/html">{{ Lang::get('l4doc.layout.docs_menu.html') }}</a></li>
+                <li><a href="../../docs/helpers">{{ Lang::get('l4doc.layout.docs_menu.helpers') }}</a></li>
                 <li><a href="../../docs/ioc">{{ Lang::get('l4doc.layout.docs_menu.ioc') }}</a></li>
                 <li><a href="../../docs/localization">{{ Lang::get('l4doc.layout.docs_menu.localization') }}</a></li>
                 <li><a href="../../docs/mail">{{ Lang::get('l4doc.layout.docs_menu.mail') }}</a></li>
@@ -176,7 +180,7 @@
                 </li>
             </ul>
         </nav>
-        <p class="copyright">Copyright &copy; 2013 Taylor Otwell. 網站由 <a href="http://casserolelabs.com/" title="Casserole Labs" target="_blank">Casserole Labs</a> 及 <a href="http://daylerees.com" title="Dayle Rees">Dayle Rees</a> 設計，中文翻譯 <a href="http://blog.kejyun.com" target="_blank">KeJyun</a></p>
+        <p class="copyright">Copyright &copy; 2013 Taylor Otwell. 網站由 <a href="http://casserolelabs.com/" title="Casserole Labs" target="_blank">Casserole Labs</a> 及 <a href="http://daylerees.com" title="Dayle Rees">Dayle Rees</a> 設計，中文翻譯 <a href="http://blog.kejyun.com" target="_blank">KeJyun</a> 及 <a href="http://blog.liaosankai.com" target="_blank">SANKAI</a> </p>
     </div>
 </footer>
 

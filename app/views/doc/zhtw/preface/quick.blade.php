@@ -73,7 +73,7 @@
 <h2>{{ Lang::get('l4doc.docs_title.preface.quick.creating_a_view') }}</h2>
 
 <p>
-    下一步我們將建立一個簡單的view(視圖)去呈現我們使用者的資料，view檔案是放在 <code>app/views</code> 目錄，包含網頁應用程式的 HTML 程式碼，我們要在這個目錄建立 <code>docs_title.blade.php</code> 及 <code>users.blade.php</code> 這兩個 view 的檔案，首先我們先建立 <code>docs_title.blade.php</code> 的檔案內容:
+    下一步我們將建立一個簡單的view(視圖)去呈現我們使用者的資料，view檔案是放在 <code>app/views</code> 目錄，包含網頁應用程式的 HTML 程式碼，我們要在這個目錄建立 <code>layout.blade.php</code> 及 <code>users.blade.php</code> 這兩個 view 的檔案，首先我們先建立 <code>layout.blade.php</code> 的檔案內容:
 </p>
 
 <pre><code>&lt;html&gt;
@@ -88,7 +88,7 @@
     下一步我們建立 <code>users.blade.php</code> 的檔案內容:
 </p>
 
-<pre><code>(@)extends('docs_title')
+<pre><code>(@)extends('layout')
 
 (@)section('content')
     Users!
@@ -110,7 +110,7 @@
 </code></pre>
 
 <p>
-    太棒了，現在你已經設定了一個簡單的view，並引用了 docs_title 的 view ，讓我們開始處理資料庫層吧。
+    太棒了，現在你已經設定了一個簡單的view，並引用了 layout 的 view ，讓我們開始處理資料庫層吧。
 </p>
 
 <p><a name="creating-a-migration"></a></p>
@@ -221,11 +221,11 @@ public function down()
     我們讓 view 可以透過 <code>users</code> 存取我們使用者的資料，所以我們可以像這樣去顯示使用者的資料:
 </p>
 
-<pre><code>(@)extends('docs_title')
+<pre><code>(@)extends('layout')
 
 (@)section('content')
     (@)foreach($users as $user)
-        &lt;p&gt;{ { $user-&gt;name } }&lt;/p&gt;
+        &lt;p&gt;({)({) $user-&gt;name (})(})&lt;/p&gt;
     (@)endforeach
 (@)stop
 </code></pre>
