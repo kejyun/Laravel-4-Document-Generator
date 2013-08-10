@@ -8,14 +8,19 @@
 // 首頁
 Route::get('/', array('as' => 'index', function()
 {
-	return 'index';
+    return 'index';
 }));
 // 文件
 Route::get('docs/{target}', array('as' => 'doc_index', 'uses'=>'DocController@Index'));
 Route::get('docs', function ()
 {
-	return View::make('doc.zhtw.docindex');
+    return View::make('doc.zhtw.docindex');
 });
 // 文件產生器
 Route::get('docsgen', array('as' => 'docgen_index', 'uses'=>'DocgenController@Index'));
+
+Route::get('test', function()
+{
+    
+});
 

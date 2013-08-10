@@ -2,7 +2,7 @@
 <!-- 
  作者:KeJyun
  建立日期:2013-06-09
- 最後修改日期:2013-06-09
+ 最後修改日期:2013-08-11
  聯絡方式:kejyun@gmail.com
  -->
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -23,6 +23,9 @@
 <style type="text/css">
 .docs-menu ul li{
     margin-top: 10px;
+}
+.to-top{
+    right: 500px;
 }
 </style>
 </head>
@@ -56,6 +59,8 @@
                 </li>
             </ul>
         </nav>
+        <a class="to-top">回到最上方</a>
+
     </div>
 </header>
 

@@ -216,6 +216,7 @@ return array(
                 'basic_usage'=>'基本使用',
                 'embedding_inline_attachments'=>'內嵌附件',
                 'queueing_mail'=>'佇列郵件',
+                'mail_and_local_development'=>'郵件與本地開發',
             ),
             'packages'=>array(
                 'introduction'=>'介紹',
@@ -255,7 +256,7 @@ return array(
             'session'=>array(
                 'configuration'=>'設置',
                 'session_usage'=>'Session使用',
-                'flash_data'=>'閃現資料',
+                'flash_data'=>'閃存資料',
                 'database_sessions'=>'資料庫Sessions',
             ),
             'templates'=>array(

@@ -23,7 +23,7 @@ class DocController extends \BaseController {
         $title_name = 'l4doc.layout.docs_menu.'.$target;
         $doc_title = Lang::get($title_name);
 
-        $this->layout->doc_title = ($doc_title != $title_name) ? ' - '.$doc_title : '';
+        $this->layout->doc_title = ($doc_title != $title_name) ? ' : '.$doc_title : '';
         $this->layout->doc_title = strip_tags($this->layout->doc_title);
         // 撈取view子目錄
         foreach ($config['allow_route']['subdoc'] as $target_index => $target_items) {
